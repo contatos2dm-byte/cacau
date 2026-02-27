@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casa Pindorama — Fábrica de Chocolate Regenerativa</title>
+
+<style>
+:root{
+--verde-escuro:#0B3D2E;
+--verde-vivo:#1ED760;
+--cacau:#5C3A21;
+--areia:#F4EBD0;
+--cinza:#f2f2f2;
+}
+
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+background:var(--cinza);
+display:flex;
+justify-content:center;
+}
+
+.container{
+max-width:430px;
+width:100%;
+background:white;
+min-height:100vh;
+}
+
+.hero{
+background:linear-gradient(180deg,var(--verde-escuro),#06241b);
+color:white;
+padding:24px 20px;
+}
+
+.hero h1{
+margin:0;
+font-size:22px;
+line-height:1.3;
+}
+
+.hero p{
+margin-top:10px;
+font-size:14px;
+opacity:0.9;
+}
+
+.donation-box{
+background:white;
+margin:-20px 16px 20px 16px;
+padding:16px;
+border-radius:18px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.meta{
+font-size:14px;
+margin-bottom:6px;
+}
+
+.progress-bar{
+height:14px;
+background:#e5e5e5;
+border-radius:20px;
+overflow:hidden;
+margin:8px 0;
+}
+
+.progress{
+height:100%;
+background:linear-gradient(90deg,var(--verde-vivo),#00ff88);
+width:40%;
+transition:0.3s;
+}
+
+.percent{
+font-weight:bold;
+font-size:13px;
+}
+
+button{
+width:100%;
+padding:14px;
+border:none;
+border-radius:12px;
+margin-top:10px;
+font-weight:bold;
+cursor:pointer;
+font-size:14px;
+}
+
+.pix{
+background:var(--verde-vivo);
+color:black;
+}
+
+.crypto{
+background:var(--cacau);
+color:white;
+}
+
+.whatsapp{
+background:#25D366;
+color:white;
+}
+
+.link-btn{
+background:#222;
+color:white;
+}
+
+.section{
+padding:0 20px 20px 20px;
+}
+
+.section h2{
+font-size:16px;
+margin-top:20px;
+margin-bottom:10px;
+}
+
+.section p{
+font-size:14px;
+line-height:1.6;
+color:#333;
+}
+
+ul{
+padding-left:18px;
+font-size:14px;
+}
+
+.footer{
+text-align:center;
+font-size:12px;
+padding:20px;
+color:#666;
+}
+a{
+text-decoration:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+<h1>🌿 Casa Pindorama — Fábrica de Chocolate Regenerativa</h1>
+<p>Transformando uma casa em centro colaborativo de enfrentamento às crises climáticas, integrando floresta, cultura e tecnologia.</p>
+</div>
+
+<div class="donation-box">
+<div class="meta"><strong>Meta:</strong> R$ 2.000</div>
+<div class="meta"><strong>Arrecadado:</strong> R$ <span id="valorAtual">800</span></div>
+
+<div class="progress-bar">
+<div class="progress" id="barra"></div>
+</div>
+
+<div class="percent"><span id="percentual">40</span>% da meta atingida</div>
+
+<button class="pix" onclick="copiarPix()">💚 Doar via Pix</button>
+<button class="crypto" onclick="copiarCrypto()">🟤 Contribuir com Web3</button>
+
+<a href="https://wa.me/5511992451218" target="_blank">
+<button class="whatsapp">📲 Enviar Comprovante</button>
+</a>
+
+</div>
+
+<div class="section">
+<h2>Sobre o Projeto</h2>
+<p>
+A Casa Pindorama é um experimento vivo que transforma uma residência comum em um centro colaborativo de regeneração social, ambiental e cultural.
+</p>
+<p>
+O espaço acolhe artistas, famílias, pesquisadores e povos originários, promovendo troca de saberes e soluções frente às crises climáticas.
+</p>
+<p>
+Para sustentar essa casa viva, desenvolvemos uma fábrica artesanal de chocolate que conecta cidade, floresta e aldeia por meio da produção consciente do cacau.
+</p>
+</div>
+
+<div class="section">
+<h2>📅 Agenda</h2>
+<ul>
+<li>Campanhas Digitais</li>
+<li>Compra do Cacau</li>
+<li>Oficina de Produção do Cacau</li>
+<li>Cerimônia do Cacau</li>
+<li>Curso de Produção de Chocolate</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>🌐 Referências</h2>
+
+<a href="https://sarafu.network/vouchers/0x5edA8e2EAEaF93a1b4d6dD20005FfC15091cA583" target="_blank">
+<button class="link-btn">Página Social 2dM</button>
+</a>
+
+<a href="https://app.gardens.fund/gardens/42220/0xd832b2f117db51021ad0387c17182796dbeb69df/0x2eb49e06ba584079ef797ecf2118f73f6527adb4" target="_blank">
+<button class="link-btn">Projeto GreenPill BR</button>
+</a>
+
+<a href="https://youtu.be/qupkEROgXdg?si=IsrNEunvjqkIztGu" target="_blank">
+<button class="link-btn">Piloto - Gamificação</button>
+</a>
+
+<a href="https://youtu.be/O7iMXQT0X1M?si=bcZzChNPYP8STjv" target="_blank">
+<button class="link-btn">Vídeo - Permacultura</button>
+</a>
+
+<a href="https://www.ajogada.org/2020/12/16/instituto-ajogada-leva-segundo-lugar-em-evento-internacional-games-for-change-com-projeto-sobre-cidades-inteligentes/" target="_blank">
+<button class="link-btn">Metodologia Utilizada</button>
+</a>
+
+</div>
+
+<div class="section">
+<h2>🎨 Adquirir NFTs</h2>
+<p>NFTs artísticas funcionam como ingresso para Oficinas e Cerimônias.</p>
+
+<a href="INSERIR_LINK_NFT_AQUI" target="_blank">
+<button class="crypto">Adquirir NFTs</button>
+</a>
+
+</div>
+
+<div class="footer">
+Pix: 57997924000121<br>
+Carteira Web3: 0xe35C47EFE510f0220454f89e547610c84647267c
+
+<div class="footer">
+Esta é uma iniciativa de uma associação sem fins lucrativos.
+Todas as contribuições são doações voluntárias, sem promessa de retorno financeiro.
+Os recursos são destinados às atividades do projeto, conforme o Código Civil Brasileiro (Lei nº 10.406/2002).
+</div>
+
+</div>
+
+<script>
+const meta = 2000;
+let arrecadado = 0; // EDITAR VALOR AQUI
+
+function calcular(){
+const porcentagem = Math.floor((arrecadado/meta)*100);
+document.getElementById("valorAtual").innerText = arrecadado;
+document.getElementById("percentual").innerText = porcentagem;
+document.getElementById("barra").style.width = porcentagem + "%";
+}
+function copiarPix(){
+navigator.clipboard.writeText("57997924000121");
+alert("Chave Pix copiada!");
+}
+function copiarCrypto(){
+navigator.clipboard.writeText("0xe35C47EFE510f0220454f89e547610c84647267c");
+alert("Carteira copiada!");
+}
+calcular();
+</script>
+
+</body>
+</html>
