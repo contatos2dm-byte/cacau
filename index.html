@@ -185,10 +185,10 @@ Fábrica de Cacau Medicinal e Chocolate Agroflorestal
 <div class="meta">Arrecadado: R$ <span id="valorAtual">50</span></div>
 
 <div class="progress-bar">
-<div class="progress" id="barra">2,5</div>
+<div class="progress" id="barra"></div>
 </div>
 
-<div class="percent"><span id="percentual"></span>% da meta alcançada</div>
+<div class="percent"><span id="percentual">2</span>% da meta alcançada</div>
 
 <input type="number" id="valor" placeholder="Insira o valor que deseja doar">
 <input type="text" id="nome" placeholder="Seu nome">
@@ -312,7 +312,7 @@ Iniciativa sem fins lucrativos — Lei nº 10.406/2002
 
 <script>
 const meta = 2000;
-let arrecadado = 1;
+let arrecadado = 50;
 
 function calcular(){
 const porcentagem = Math.floor((arrecadado/meta)*100);
@@ -353,5 +353,40 @@ window.open(url,"_blank");
 calcular();
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.min.js"></script>
+
+<script>
+async function pagarMetaMask(){
+
+if(typeof window.ethereum === 'undefined'){
+alert("MetaMask não detectada.");
+return;
+}
+
+await ethereum.request({ method: 'eth_requestAccounts' });
+
+const provider = new ethers.providers.Web3Provider(window.ethereum);
+const signer = provider.getSigner();
+
+const enderecoDestino = "0xe35C47EFE510f0220454f89e547610c84647267c";
+
+/* valor vindo do input */
+let valor = document.getElementById("valor").value;
+if(!valor || valor <= 0){
+alert("Insira um valor válido.");
+return;
+}
+
+/* converter para ETH */
+const valorEmEther = ethers.utils.parseEther(valor.toString());
+
+const tx = await signer.sendTransaction({
+to: enderecoDestino,
+value: valorEmEther
+});
+
+alert("Transação enviada! Hash: " + tx.hash);
+}
+</script>
 </body>
 </html>
